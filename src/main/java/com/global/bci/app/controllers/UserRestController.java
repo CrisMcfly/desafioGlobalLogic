@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.global.bci.app.entity.User;
 import com.global.bci.app.service.IUserService;
+import com.global.bci.app.service.impl.UserServiceImpl;
 import com.global.bci.app.utils.ValidatorsUtil;
 
 import net.bytebuddy.implementation.bytecode.Throw;
@@ -39,6 +40,8 @@ import net.bytebuddy.implementation.bytecode.Throw;
 @RequestMapping(value = {"/api/users"})
 public class UserRestController {
 
+	private Logger logger = LoggerFactory.getLogger(UserRestController.class);
+	
 	@Autowired
 	private IUserService userService;
 
@@ -66,16 +69,18 @@ public class UserRestController {
 				user.setIsActive(true);
 				newUser = userService.save(user);
 			}else {
-				response.put("Error", "Formato de contraseña incorrecto");
+				logger.error("Formato de contrasenia incorrecto");
+				response.put("Error", "Formato de contrasenia incorrecto");
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
 			}
 		} catch(DataAccessException e) {
+			logger.error("Ups!. Ocurrio un error al insertar en la base de datos.");
 			response.put("mensaje", "Ups!. Ocurrio un error al insertar en la base de datos.");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		
-		response.put("mensaje", "El usuario ha sido creado con éxito!");
+		logger.info("Usuario creado correctamente");
+		response.put("mensaje", "El usuario ha sido creado con exito!");
 		response.put("User", newUser);
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
@@ -87,11 +92,13 @@ public class UserRestController {
 		try {
 			user = userService.findById(id);
 		} catch(DataAccessException e) {
+			logger.error("Ups!. Ocurrio un error al realizar la consulta en la base de datos!: " + e.getMessage());
 			response.put("mensaje", "Ups!. Ocurrio un error al realizar la consulta en la base de datos!");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		if(user==null) {
+			logger.error("El usuario no se encuentra en la base de datos.");
 			response.put("mensaje", "El usuario ID: ".concat(id.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
@@ -137,15 +144,17 @@ public class UserRestController {
 				currentUser.setUpdateAt(Date.from(Instant.now()));
 				userUpdated = userService.save(currentUser);
 			}else {
-				response.put("Error", "Formato de contraseña incorrecto");
+				logger.error("Formato de contrasenia incorrecto");
+				response.put("Error", "Formato de contrasenia incorrecto");
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
 			}
 		} catch (DataAccessException e) {
+			logger.error("Ups!. Ocurrio un error al actualizar en la base de datos.");
 			response.put("mensaje", "Error al actualizar al usuario en la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-
+		logger.info("Usuario actualizado correctamente");
 		response.put("mensaje", "El Usuario ha sido actualizado con éxito!");
 		response.put("usuario", userUpdated);
 
@@ -165,12 +174,13 @@ public class UserRestController {
 			}
 			
 		} catch (DataAccessException e) {
+			logger.error("Ups!. Ocurrio un error al eliminar al usuario de la base de datos: " + e.getMessage());
 			response.put("mensaje", "Ups!. Ocurrio un error al eliminar al usuario de la base de datos");
 			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		
-		response.put("mensaje", "El usuario ha sido eliminado con éxito!");
+		logger.info("Usuario eliminado con exito");
+		response.put("mensaje", "El usuario ha sido eliminado con exito!");
 		
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
