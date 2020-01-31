@@ -29,10 +29,10 @@ public class ValidatorsUtil {
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(pass);
 		if (matcher.matches()) {
-			logger.info("Formato de contraseÃ±a validado: " + matcher.matches());
+			logger.info("Formato de contraseña validado: " + matcher.matches());
 			return true;	
 		}else {
-			logger.error("Formato de contraseÃ±a incorrecto");
+			logger.error("Formato de contraseña incorrecto");
 			return false;
 		}
 	}
