@@ -23,14 +23,22 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.UniqueElements;
 
 @Entity
-@Table(name = "users")
+@Table(
+		name = "users",
+		uniqueConstraints = {
+			      @UniqueConstraint(
+			          columnNames = {"user_email"},
+			          name="user_email"
+			      )
+			   }
+		)
 public class User implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	//@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
 	@Column(name = "user_id")
 	private Long idUser;
 	
@@ -54,7 +62,7 @@ public class User implements Serializable{
 	private String name;
 	
 	@Email(message = "Formato de correo incorrecto, debe seguir el siguiente: correo@ejemplo.cl")
-	@Column(name = "user_email", unique = true)
+	@Column(name = "user_email")
 	private String email;
 	
 	@NotNull(message = "No puede ser nulo")
