@@ -8,6 +8,10 @@ _Se presenta una solución, desarrollada en springboot, consiste en un api rest 
     - Gradle 3.x
     - JWT
     - Java 1.8
+    - JUnit
+    - Mockito
+    - JPA
+    - Base de datos en memoria (H2)
     ```
 
 ## IDE Utilizado. ☕
