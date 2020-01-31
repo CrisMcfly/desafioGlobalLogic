@@ -1,5 +1,6 @@
 # Ejercicio Postulación Global Logic
-_Se presenta una solución, desarrollada en springboot, consiste en un api rest para creación de usuarios y su CRUD.
+
+_Se presenta una solución, desarrollada en springboot, consiste en un api rest para creación de usuarios y su CRUD._
 
 ## Tecnologias. 🚀
     ```
@@ -20,7 +21,9 @@ _Se presenta una solución, desarrollada en springboot, consiste en un api rest 
     - Postman
     ```
 ### Instalación 🔧
-_Para ejecutar este proyecto debes seguir las siguientes instrucciones:
+
+_Para ejecutar este proyecto debes seguir las siguientes instrucciones:_
+
     ```
     - Abrir una consola de comandos
     - Ubicarse dentro de la carpeta del proyecto ahí econtraras la carpeta de Documentacion, en donde se encontrara el jar del proyecto
@@ -33,11 +36,14 @@ _Para ejecutar este proyecto debes seguir las siguientes instrucciones:
 
 ### Ejecutando las pruebas en Postman⚙️
 
-_solo debes usar la api rest que se encuentra dentro de la colección que ya importaste. solo enviar las peticiones, 
+_solo debes usar la api rest que se encuentra dentro de la colección que ya importaste. solo enviar las peticiones,_ 
+
 o cambiar la informacion del JSON para probar las validaciones.
 
 ### Diagramas 📖
-_Dentro de la carpeta documentación estan los diagramas solicitados: Diagrama de componentes y de secuencias.
+
+_Dentro de la carpeta documentación estan los diagramas solicitados: Diagrama de componentes y de secuencias._
 
 ### Autor ✒️
-_Cristian Donoso Cubillos.-
+
+_Cristian Donoso Cubillos.-_
