@@ -5,7 +5,7 @@ _Se presenta una solución, desarrollada en springboot, consiste en un api rest 
 ---
 
 ## Tecnologias. 🚀
-    ```
+```
     - Springboot.
     - Gradle 3.x
     - JWT
@@ -14,7 +14,7 @@ _Se presenta una solución, desarrollada en springboot, consiste en un api rest 
     - Mockito
     - JPA
     - Base de datos en memoria (H2)
-    ```
+```
 ---
 
 ## IDE Utilizado. ☕
@@ -37,9 +37,9 @@ _Para ejecutar este proyecto debes seguir las siguientes instrucciones:_
  
     - Abrir una consola de comandos
     - Ubicarse dentro de la carpeta del proyecto ahí econtraras la carpeta de Documentacion, en donde se encontrara el jar del proyecto
-    - Escribir la siguiente linea de comandos (**windows** - **MacOS**):
+    - Escribir la siguiente linea de comandos (###windows - ###MacOS):
 ```
-    $ desafioGlobalLogic-0.0.1-SNAPSHOT.jar
+    $ java -jar desafioGlobalLogic-0.0.1-SNAPSHOT.jar
 ```
     - para asi levantar el proyecto.
     - Abrir postman
