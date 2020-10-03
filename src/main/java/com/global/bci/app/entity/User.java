@@ -25,54 +25,58 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.UniqueElements;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
-@Table(
-		name = "users",
-		uniqueConstraints = {
-			      @UniqueConstraint(
-			          columnNames = {"user_email"},
-			          name="user_email"
-			      )
-			   }
-		)
+@Table(name = "users")
 public class User implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
+	@ApiModelProperty(notes = "Id Unico", dataType = "Long")
 	private Long idUser;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "user_create_at")
+	@ApiModelProperty(notes = "Fecha Creacion", dataType = "Date Temporal.TIMESTAMP")
 	private Date createAt;
 	
 	@Column(name = "user_update_at")
 	@Temporal(TemporalType.TIMESTAMP)
+	@ApiModelProperty(notes = "Fecha Actualizacion", dataType = "Date Temporal.TIMESTAMP")
 	private Date updateAt;
 	
 	@Column(name = "user_last_login_at")
 	@Temporal(TemporalType.TIMESTAMP)
+	@ApiModelProperty(notes = "Fecha ultimo login", dataType = "Date Temporal.TIMESTAMP")
 	private Date lastLoginAt;
 	
 	@Column(name = "user_token")
+	@ApiModelProperty(notes = "JWT TOKEN", dataType = "String")
 	private String token;
 	
 	@NotNull(message = "No puede ser nulo")
 	@Column(name = "user_name")
+	@ApiModelProperty(notes = "Nombre", dataType = "String")
 	private String name;
 	
-	@Email(message = "Formato de correo incorrecto, debe seguir el siguiente: correo@ejemplo.cl")
-	@Column(name = "user_email")
+//	@Email(message = "Formato de correo incorrecto, debe seguir el siguiente: correo@ejemplo.cl")
+	@Column(name = "user_email", unique = true )
+	@ApiModelProperty(notes = "Email", dataType = "String")
 	private String email;
 	
 	@NotNull(message = "No puede ser nulo")
 	@Column(name = "user_password")
+	@ApiModelProperty(notes = "Password", dataType = "String")
 	private String password;
 	
 	@Column(name = "user_is_active")
+	@ApiModelProperty(notes = "Usuario Activo", dataType = "Boolean")
 	private Boolean isActive;
 	
 	@OneToMany(mappedBy = "user", cascade = { CascadeType.ALL })
+	@ApiModelProperty(notes = "Lista de telefonos registrados", dataType = "List<Phone>")
 	private List<Phone> phones;
 
 	public Long getIdUser() {

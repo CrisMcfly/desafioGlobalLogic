@@ -29,26 +29,6 @@
 					"response": []
 				},
 				{
-					"name": "findById",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8081/api/users/1",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"api",
-								"users",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "create",
 					"request": {
 						"method": "POST",
@@ -62,12 +42,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\":\"cristian\",\n\t\"email\":\"cdonoso@test.cl\",\n\t\"password\": \"Mta23\",\n\t\"phones\":[\n\t\t{\n\t\t\t\"number\":\"1234560\",\n\t\t\t\"cityCode\": \"123\",\n\t\t\t\"countryCode\": \"12\"\n\t\t}\n\t]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\n\t\"name\":\"cristian\",\n\t\"email\":\"akjshdaksj@\",\n\t\"password\": \"Mta23\",\n\t\"phones\":[\n\t\t{\n\t\t\t\"number\":\"1234560\",\n\t\t\t\"cityCode\": \"123\",\n\t\t\t\"countryCode\": \"12\"\n\t\t}\n\t]\n}"
 						},
 						"url": {
 							"raw": "localhost:8081/api/users/",
@@ -79,76 +54,6 @@
 								"api",
 								"users",
 								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\":\"cristian\",\n\t\"email\":\"cristian@donoso.cl\",\n\t\"password\": \"Asd12\",\n\t\"isActive\": false,\n\t\"phones\":[\n\t\t{\n\t\t\t\"number\":\"1234560\",\n\t\t\t\"cityCode\": \"123\",\n\t\t\t\"countryCode\": \"12\"\n\t\t}\n\t]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8081/api/users/1",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"api",
-								"users",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": []
-						},
-						"url": {
-							"raw": "localhost:8081/api/users/1",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"api",
-								"users",
-								"1"
 							]
 						}
 					},

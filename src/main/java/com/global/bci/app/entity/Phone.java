@@ -17,29 +17,36 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table(name = "phones")
 public class Phone implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ApiModelProperty(notes = "Id unico", dataType = "Date Temporal.TIMESTAMP")
 	private Long idPhone;
 	
 	@NotNull(message = "No puede ser nulo")
 	@Column(name = "phone_number")
+	@ApiModelProperty(notes = "Numero", dataType = "String")
 	private String number;
 	
 	@NotNull(message = "No puede ser nulo")
 	@Column(name = "phone_city_code")
+	@ApiModelProperty(notes = "Codigo de ciudad", dataType = "String")
 	private String cityCode;
 	
 	@NotNull(message = "No puede ser nulo")
 	@Column(name = "phone_country_code")
+	@ApiModelProperty(notes = "Codigo de pais", dataType = "String")
 	private String countryCode;
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JsonIgnore
 	@JoinColumn(name = "user_id",nullable = false, foreignKey = @ForeignKey(name = "fk_phone_user"))
+	@ApiModelProperty(notes = "Usuario", dataType = "User")
 	public User user;
 
 	public Long getIdPhone() {
