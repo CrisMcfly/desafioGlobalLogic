@@ -14,6 +14,7 @@ _Se presenta una solución, desarrollada en springboot, consiste en un api rest 
     - Mockito
     - JPA
     - Base de datos en memoria (H2)
+    - SWAGGER
 ```
 ---
 
@@ -36,8 +37,8 @@ _Para ejecutar este proyecto debes seguir las siguientes instrucciones:_
 
  
     - Abrir una consola de comandos
-    - Ubicarse dentro de la carpeta del proyecto ahí econtraras la carpeta de Documentacion, en donde se encontrara el jar del proyecto
-    - Escribir la siguiente linea de comandos ([Windows] - [MacOs]):
+    - Ubicarse dentro de la carpeta 'desafioGlobalLogic' luego ir a la carpeta 'Documentacion' , ahí encontraras el jar del proyecto
+    - Escribir la siguiente linea de comandos (Para: [Windows] - [MacOs]):
 ```
     $ java -jar desafioGlobalLogic-0.0.1-SNAPSHOT.jar
 ```
