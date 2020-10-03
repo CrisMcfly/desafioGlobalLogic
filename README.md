@@ -60,6 +60,7 @@ o cambiar la informacion del JSON para probar las validaciones.
 _Dentro de la carpeta documentación estan los diagramas solicitados: Diagrama de componentes y de secuencias._
 
 ---
+### Documentacion APIREST 📖
 
 _Para acceder a la documentación de la api luego de que el proyecto ya se encuentra levantado seguir las siguientes instrucciones:_
 
