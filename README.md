@@ -1,6 +1,6 @@
 # Ejercicio Postulación Global Logic
 
-_Se presenta una solución, desarrollada en springboot, consiste en un api rest para creación de usuarios y su CRUD._
+_Se presenta una solución, desarrollada en springboot, consiste en un api rest para creación de usuarios._
 
 ---
 
