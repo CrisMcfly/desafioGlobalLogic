@@ -18,9 +18,9 @@ _Se presenta una solución, desarrollada en springboot, consiste en un api rest 
 ---
 
 ## IDE Utilizado. ☕
-    ```
+```
     - Eclipse.
-    ```
+```
 
 ---
 
@@ -37,7 +37,7 @@ _Para ejecutar este proyecto debes seguir las siguientes instrucciones:_
  
     - Abrir una consola de comandos
     - Ubicarse dentro de la carpeta del proyecto ahí econtraras la carpeta de Documentacion, en donde se encontrara el jar del proyecto
-    - Escribir la siguiente linea de comandos (###windows - ###MacOS):
+    - Escribir la siguiente linea de comandos (**windows** - **MacOS**):
 ```
     $ java -jar desafioGlobalLogic-0.0.1-SNAPSHOT.jar
 ```
